@@ -38,6 +38,7 @@ typedef enum {
     BT_SOC_AR3K,
     BT_SOC_ROME,
     BT_SOC_CHEROKEE,
+    BT_SOC_NAPIER,
     /* Add chipset type here */
     BT_SOC_RESERVED
 }bt_soc_type;
@@ -84,7 +85,8 @@ struct bt_qcom_struct {
     char *rfkill_state;
     bool enable_extldo;
 };
-extern struct bt_qcom_struct q;
+extern struct bt_qcom_struct *q;
+extern pthread_mutex_t q_lock;
 
 #endif /* BT_VENDOR_QCOM_H */
 
