@@ -132,7 +132,9 @@ void hw_epilog_cback(void *p_mem)
 
     ALOGI("%s Opcode:0x%04X Status: %d", __FUNCTION__, opcode, status);
 
+#ifdef BT_THREADLOCK_SAFE
     pthread_mutex_lock(&q_lock);
+#endif
     if (!q) {
         ALOGE("hw_epilog_cback called with NULL context");
         goto out;
@@ -143,7 +145,10 @@ void hw_epilog_cback(void *p_mem)
     /* Once epilog process is done, must call callback to notify caller */
     q->cb->epilog_cb(BT_VND_OP_RESULT_SUCCESS);
 out:
+#ifdef BT_THREADLOCK_SAFE
     pthread_mutex_unlock(&q_lock);
+#endif
+    return;
 }
 
 /*******************************************************************************

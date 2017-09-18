@@ -193,7 +193,7 @@ static int get_bt_soc_type()
     ALOGI("bt-vendor : get_bt_soc_type");
 
     ret = property_get("qcom.bluetooth.soc", bt_soc_type, NULL);
-    if (ret != 0) {
+    if (ret >= 0) {
         ALOGI("qcom.bluetooth.soc set to %s\n", bt_soc_type);
         if (!strncasecmp(bt_soc_type, "rome", sizeof("rome"))) {
             return BT_SOC_ROME;
@@ -348,7 +348,7 @@ int start_hci_filter() {
            //Filter should have been started OR in the process of initializing
            //Make sure of hci_filter_status and return the state based on it
        } else {
-
+           property_set("wc_transport.clean_up","0");
            property_set("wc_transport.hci_filter_status", "0");
            property_set(BT_VND_FILTER_START, "true");
            ALOGV("%s: %s set to true ", __func__, BT_VND_FILTER_START );
@@ -451,6 +451,9 @@ static int bt_powerup(int en )
             return -1;
         }
     }
+    /* Always perform BT power action so as to have the chance to 
+       recover BT power properly from un-expected error. */
+#ifdef CHECK_BT_POWER_PERFORM_ACTION
     if(can_perform_action(on) == false) {
         ALOGE("%s:can't perform action as it is being used by other clients", __func__);
 #ifdef WIFI_BT_STATUS_SYNC
@@ -459,6 +462,9 @@ static int bt_powerup(int en )
 #endif
             goto done;
     }
+#else
+    ALOGI("%s: always perform action", __func__);
+#endif
     ret = asprintf(&enable_ldo_path, "/sys/class/rfkill/rfkill%d/device/extldo", q->rfkill_id);
     if( (ret < 0 ) || (enable_ldo_path == NULL) )
     {
@@ -796,6 +802,16 @@ static int __op(bt_vendor_opcode_t opcode, void *param)
                     case BT_SOC_ROME:
                     case BT_SOC_AR3K:
                     case BT_SOC_CHEROKEE:
+                        if (q->soc_type == BT_SOC_ROME)
+                        {
+                            if (nState == BT_VND_PWR_ON)
+                            {
+                                /* Always power BT off before power on. */
+                                ALOGI("bt-vendor: always power off before power on");
+                                bt_powerup(BT_VND_PWR_OFF);
+                            }
+                        }
+
                         /* BT Chipset Power Control through Device Tree Node */
                         retval = bt_powerup(nState);
                     default:
@@ -924,18 +940,14 @@ userial_open:
                                     ALOGV("BD address read from Boot property: %s\n", bd_addr);
                                     tok =  strtok(bd_addr, ":");
                                     while (tok != NULL) {
-                                        ALOGV("bd add [%d]: %d ", i, strtol(tok, NULL, 16));
+                                        ALOGV("bd add [%d]: %ld ", i, strtol(tok, NULL, 16));
                                         if (i>=6) {
                                             ALOGE("bd property of invalid length");
                                             ignore_boot_prop = TRUE;
                                             break;
                                         }
-                                        if (i == 6 && !ignore_boot_prop) {
-                                            ALOGV("Valid BD address read from prop");
-                                            memcpy(q->bdaddr, local_bd_addr_from_prop, sizeof(vnd_local_bd_addr));
-                                            ignore_boot_prop = FALSE;
-                                        } else {
-                                            ALOGE("There are not enough tokens in BD addr");
+                                        if (!validate_tok(tok)) {
+                                            ALOGE("Invalid token in BD address");
                                             ignore_boot_prop = TRUE;
                                             break;
                                         }
@@ -945,7 +957,7 @@ userial_open:
                                     }
                                     if (i == 6 && !ignore_boot_prop) {
                                         ALOGV("Valid BD address read from prop");
-                                        memcpy(vnd_local_bd_addr, local_bd_addr_from_prop, sizeof(vnd_local_bd_addr));
+                                        memcpy(q->bdaddr, local_bd_addr_from_prop, sizeof(q->bdaddr));
                                         ignore_boot_prop = FALSE;
                                     } else {
                                         ALOGE("There are not enough tokens in BD addr");
@@ -957,12 +969,14 @@ userial_open:
                                      ignore_boot_prop = TRUE;
                                 }
 #endif //READ_BT_ADDR_FROM_PROP
+#ifdef BT_NV_SUPPORT
                                     /* Always read BD address from NV file */
                                 if(ignore_boot_prop && !bt_vendor_nv_read(1, q->bdaddr))
                                 {
                                    /* Since the BD address is configured in boot time We should not be here */
                                    ALOGI("Failed to read BD address. Use the one from bluedroid stack/ftm");
                                 }
+#endif
                                 if(rome_soc_init(fd, (char*)q->bdaddr)<0) {
                                     retval = -1;
                                 } else {
@@ -977,10 +991,12 @@ userial_open:
 
                             property_set("wc_transport.clean_up","0");
                             if (retval != -1) {
-
                                 retval = start_hci_filter();
                                 if (retval < 0) {
                                     ALOGE("%s: WCNSS_FILTER wouldn't have started in time\n", __func__);
+                                    property_set("wc_transport.hci_filter_status", "-1");
+                                    property_set("wc_transport.start_hci", "false");
+                                    bt_powerup(0);
                                 } else {
 #ifdef ENABLE_ANT
                                     if (is_ant_req) {
@@ -1037,9 +1053,16 @@ userial_open:
                         {
                             property_get("ro.bluetooth.emb_wp_mode", emb_wp_mode, false);
                             retval = start_hci_filter();
+
                             if (retval < 0) {
                                 ALOGE("WCNSS_FILTER wouldn't have started in time\n");
-
+                                /*
+                                 Set the following property to -1 so that the SSR cleanup routine
+                                 can reset SOC.
+                                 */
+                                property_set("wc_transport.hci_filter_status", "-1");
+                                property_set("wc_transport.start_hci", "false");
+                                bt_powerup(0);
                             } else {
 #ifdef ENABLE_ANT
                                 if (is_ant_req) {
@@ -1289,7 +1312,9 @@ static int op(bt_vendor_opcode_t opcode, void *param)
 {
     int ret;
     ALOGV("++%s", __FUNCTION__);
+#ifdef BT_THREADLOCK_SAFE
     pthread_mutex_lock(&q_lock);
+#endif
     if (!q) {
         ALOGE("op called with NULL context");
         ret = -BT_STATUS_INVAL;
@@ -1297,7 +1322,9 @@ static int op(bt_vendor_opcode_t opcode, void *param)
     }
     ret = __op(opcode, param);
 out:
+#ifdef BT_THREADLOCK_SAFE
     pthread_mutex_unlock(&q_lock);
+#endif
     ALOGV("--%s ret = 0x%x", __FUNCTION__, ret);
     return ret;
 }
@@ -1454,10 +1481,10 @@ static bool is_debug_force_special_bytes() {
 }
 
 // Entry point of DLib
+/* Remove 'ssr_cleanup' because it's not defined in 'bt_vendor_interface_t'. */
 const bt_vendor_interface_t BLUETOOTH_VENDOR_LIB_INTERFACE = {
     sizeof(bt_vendor_interface_t),
     init,
     op,
-    cleanup,
-    ssr_cleanup
+    cleanup
 };
