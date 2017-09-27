@@ -97,7 +97,8 @@ uint8_t bt_vendor_nv_read
   {
     case NV_BD_ADDR_I:
       // A strange default parameter is used here. A debugger shows 4 parameters being passed.
-      cmd_result = (nv_persist_stat_enum_type)bt_nv_cmd(NV_READ_F,  NV_BD_ADDR_I, &my_nv_item, 0);      ALOGI("CMD result: %d", cmd_result);
+      cmd_result = (nv_persist_stat_enum_type)bt_nv_cmd(NV_READ_F,  NV_BD_ADDR_I, &my_nv_item, 0);
+      ALOGI("CMD result: %d", cmd_result);
       if (NV_SUCCESS != cmd_result)
       {
         ALOGE("Failed to read BD_ADDR from NV");
