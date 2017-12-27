@@ -6,7 +6,7 @@ ifneq ($(BOARD_IS_AUTOMOTIVE),true)
     endif
     include $(call all-named-subdir-makefiles,$(TARGET_QCOM_BLUETOOTH_VARIANT))
   else
-   ifneq ($(filter msm8x27 msm8226 msm8974 8960,$(TARGET_BOARD_PLATFORM)),)
+   ifneq ($(filter msm8x27 msm8226 msm8974 msm8960,$(TARGET_BOARD_PLATFORM)),)
      include $(call all-named-subdir-makefiles,msm8960)
    else ifneq ($(filter msm8994,$(TARGET_BOARD_PLATFORM)),)
      include $(call all-named-subdir-makefiles,msm8992)
