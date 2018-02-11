@@ -40,6 +40,11 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8992
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+# Variants of QCOM HAL
+#TARGET_QCOM_DISPLAY_VARIANT := caf-msm8994
+#TARGET_QCOM_AUDIO_VARIANT := caf-msm8994
+#TARGET_QCOM_MEDIA_VARIANT := caf-msm8994
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
@@ -59,6 +64,7 @@ BOARD_HAS_QCA_BT_ROME := true
 QCOM_BT_USE_BTNV := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := false
+#TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8992
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -128,7 +134,7 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Lineage Hardware
-BOARD_HARDWARE_CLASS += \
+#BOARD_HARDWARE_CLASS += \
     $(DEVICE_PATH)/lineagehw
 
 # Partitions
@@ -160,7 +166,8 @@ TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+include device/xiaomi/libra/sepolicy/legacy/legacy-sepolicy.mk
+include device/xiaomi/libra/sepolicy/oth/common/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Vendor init

@@ -30,7 +30,10 @@ PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 $(call inherit-product, vendor/xiaomi/libra/libra-vendor.mk)
 
 # Call the HWUI overrides
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+$(call inherit-product, vendor/nitrogen/config/phone-xxhdpi-2048-hwui-memory.mk)
+
+
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
