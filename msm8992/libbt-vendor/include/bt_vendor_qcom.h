@@ -41,6 +41,10 @@ typedef enum {
     BT_SOC_RESERVED
 }bt_soc_type;
 
+typedef enum {
+    BT_VND_OP_ANT_USERIAL_OPEN = 254,
+    BT_VND_OP_ANT_USERIAL_CLOSE
+}ant_serial;
 
 extern bt_vendor_callbacks_t *bt_vendor_cbacks;
 /* HW_NEED_END_WITH_HCI_RESET
