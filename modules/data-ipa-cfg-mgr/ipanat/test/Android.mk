@@ -1,4 +1,4 @@
-ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter msm8992,$(TARGET_BOARD_PLATFORM)))
 ifneq (, $(filter aarch64 arm arm64, $(TARGET_ARCH)))
 
 LOCAL_PATH := $(call my-dir)

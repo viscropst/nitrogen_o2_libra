@@ -1,2 +1,3 @@
 r_dir_file(energyawareness, sysfs_uio)
 r_dir_file(energyawareness, sysfs_uio_file)
+r_dir_file(energyawareness, uio_sysfs)

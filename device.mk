@@ -281,7 +281,9 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    rild_socket
+    rild_socket \
+    libprotobuf-cpp-full
+    
 
 # Sensors
 PRODUCT_PACKAGES += \
