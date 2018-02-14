@@ -1,6 +1,9 @@
 allow rmt_storage debugfs_rmt_storage:dir r_dir_perms;
 allow rmt_storage debugfs_rmt_storage:file rw_file_perms;
 allow rmt_storage self:capability net_raw;
-allow rmt_storage sysfs_uio:file r_file_perms;
-allow rmt_storage sysfs_uio:dir { read open search };
-allow rmt_storage sysfs_uio:lnk_file { read };
+allow rmt_storage uio_sysfs:file r_file_perms;
+allow rmt_storage uio_sysfs:dir { read open search };
+allow rmt_storage uio_sysfs:lnk_file { read };
+allow rmt_storage sysfs_uio_file:file r_file_perms;
+allow rmt_storage sysfs_uio_file:dir { read open search };
+allow rmt_storage sysfs_uio_file:lnk_file { read };
