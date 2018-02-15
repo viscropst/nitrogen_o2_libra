@@ -1,0 +1,1 @@
+allow untrusted_app_all kern_ver_proc_file:file r_file_perms; 
