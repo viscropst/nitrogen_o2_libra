@@ -1,0 +1,198 @@
+====================
+     02-15-2018
+====================
+
+
+   * device/xiaomi/libra/
+960df78b rmt_storage.te:Fix some selinux denials
+
+   * frameworks/base/
+c5b01bbd907 Text battery style: show a tilde when charging
+671a69046c2 Fix right padding when using hidden/text battery style
+870a6f7e9f7 Circle and dot battery fixes and improvements
+e7b36c356a0 BatteryMeterDrawable: add hidden option
+95213b6534f BatteryMeterDrawable: add text style
+9c1f2da2e66 BatteryMeterDrawable: add dotted circle style
+bf7d25c19fb BatteryMeterDrawable: add battery styles [1/2]
+f0b124c002d Revert "[1/2] base: poor man battery style tweaks"
+b3be98d0cf5 Clock customization: more improvements
+2023c38d74a Clock code performance improvements
+1134f286e21 Status bar left/right clock customizations [1/2]
+
+   * packages/apps/NitrogenSettings/
+7ed13c0 NitrogenSettings: move battery to PreferenceScreen
+a31c52f Remove useless strings and translate to RU
+0063348 Move sysui tuner percentage settings to custom battery settings [2/2] * Hide landscape battery mode for now
+bb0f220 BatteryMeterDrawable: add battery styles [2/2]
+2022de2 Fix Clock date format listpreference
+cf26b73 Status bar clock and date customizations [2/2]
+
+   * vendor/nitrogen/
+433e7be themes: build as apps
+
+====================
+     02-14-2018
+====================
+
+
+   * device/xiaomi/libra/
+99f50104 GPS changes for china and other countries
+05ea0cea Fix some selinux dehinals
+b82fdf48 Fix some selinux dehinals and building direction
+
+   * frameworks/base/
+c1239006a6d SystemUI: Always show alarm info in footer * and remove animation after: https://imgur.com/a/QK1Eu
+685966d1de7 DoubleTapToSleep: Increase bottom area on lockscreen
+
+   * hardware/qcom/bt/
+ca32cde Fix msm8992 building
+
+   * packages/apps/Dialer/
+e08c98f18 Dialer: Update PTBR translation
+5d2913d58 Update Italian translation
+
+   * packages/apps/NitrogenSettings/
+448b3de RU: fix string
+
+   * packages/apps/Settings/
+322293626c APN: fix editing again https://imgur.com/a/xH5Ih
+
+====================
+     02-13-2018
+====================
+
+
+   * device/xiaomi/libra/
+b1bbfc12 Add the cryptfs_hw
+
+   * frameworks/base/
+f6a32779586 NfcTile: Avoid NPE during boot up phase
+7da865c363b Themes: build as apps * nexus and pixel ready
+
+   * vendor/nitrogen/
+790b208 overlay: Remove useless ambient overlay
+
+====================
+     02-12-2018
+====================
+
+
+   * build/make/
+6b0203b51 tasks: kernel: depend INSTALLED_KERNEL_MODULES on depmod
+4419c476e Revert "Revert "kernel: Handle kernel modules correctly""
+
+   * device/xiaomi/libra/
+89a1ab6b sepolicy:fix the typo
+4c6ceddc sepolicy:sysfs_uio:declare type in legacy/legacy-common - From Lineage's android_system_sepolicy
+8c2877a6 Nitrogen-ify
+
+   * frameworks/base/
+42ab9380bd1 base: fix notification sound for some apps if Smart notification sound enabled
+938742b15f0 QS: long press caffein tile to toggle cpu info overlay
+
+   * vendor/nitrogen/
+7fbd072 Add cad_calibration for AR original thread : https://forum.xda-developers.com/showpost.php?p=75507368&postcount=3453
+
+====================
+     02-11-2018
+====================
+
+
+   * device/oneplus/oneplus3/
+2383a47 init.qcom.power: Update profile by Sasha (Inkyz \ SyCreed)
+
+   * frameworks/base/
+c5b1f756951 Themes: Add some dialogs again (Fix for PackageInstaller and etc)
+
+   * packages/apps/NitrogenSettings/
+5e5a1b1 Update CS and SK
+
+   * packages/apps/Settings/
+55a63f40cf Return themes to AndroidManifest.xml because we have correct overlay now
+6e39b4df6b Jump to homescreen and back on theme change
+
+====================
+     02-10-2018
+====================
+
+
+   * frameworks/base/
+33a73832af0 Hide keyguard shortcuts when quick settings disabled on secure lockscreen
+675c88a5d7d Themes: Add more dialogs Thanks to @Mazda-- and @jhenrique09
+
+   * packages/apps/Settings/
+70142497ea Themes: Fix BT pair dialog
+
+====================
+     02-09-2018
+====================
+
+
+   * frameworks/base/
+e1aea6c8677 Add a one time QS dialog for the caffeine tile
+01e287496ea Remove other options off the Caffeine QS Tile but infinite
+81080a0945e Ambient music ticker improvements
+
+   * system/sepolicy/
+dd01ba7d sepolicy: Ignore custom additions
+
+====================
+     02-08-2018
+====================
+
+
+====================
+     02-07-2018
+====================
+
+
+   * build/make/
+02c39322e Merge tag 'android-8.1.0_r14' into o2
+
+   * frameworks/av/
+38175918d Merge tag 'android-8.1.0_r14' into o2
+
+   * frameworks/base/
+47db41a7401 Theme safe boot dialog
+fd59e73a55f SimColors: Use _800 color Default Dialer color is <color name="dialer_theme_color">#2A56C6</color> Use <color name="Blue_800">#ff2a56c6</color> for consistent
+dd1c3526190 Merge tag 'android-8.1.0_r14' into o2
+264d6e2becd Update zh_rCN translation
+befe9dfff12 Themes: Add Light.Dialog.Alert overlay @xyyx: add black
+8e62f19bcaf Update PL translation
+d22af4c9845 Theme DUI dialogs & things
+
+   * hardware/interfaces/
+50b48c02 Merge tag 'android-8.1.0_r14' into o2
+
+   * packages/apps/NitrogenSettings/
+ac4064a Update zh_rCN translation
+
+   * packages/apps/Settings/
+5cd2398e6b Merge tag 'android-8.1.0_r14' into o2
+98309e5e3d Update zh_rCN translation
+
+   * packages/providers/DownloadProvider/
+9b41243 Merge tag 'android-8.1.0_r14' into o2
+
+====================
+     02-06-2018
+====================
+
+
+   * build/make/
+0f93b1fa9 Build DUI themes
+
+   * packages/apps/DUI/
+dca4b92 Update PL translation
+
+   * packages/apps/Messaging/
+a803b8d Add PL translation
+
+   * packages/apps/NitrogenSettings/
+4d30c0a Update PL translation
+
+   * packages/apps/Settings/
+4ce08e99c3 Themes: Fix ActivityPicker
+a45b8e57f7 Update PL translation
+4af5822588 DUI: Fix theming custom action dialog
+
