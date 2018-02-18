@@ -383,5 +383,8 @@
     <integer name="config_deviceHardwareWakeKeys">64</integer>
     
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    
+    <!-- Whether device has dash charging support -->
+    <bool name="config_hasDashCharger">true</bool>
 
 </resources>
