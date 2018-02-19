@@ -1,0 +1,176 @@
+====================
+     2018-02-19    
+====================
+
+ * device/xiaomi/libra
+57bf32f  fix some selinux denials  [viscropst]
+2a5deb5  fix typo in sepolicy and powerhint  [viscropst]
+8a168df  add powerhint.xml for libra  [viscropst]
+b8cd5ad  BoardConfig.mk: add the selinux dir  [viscropst]
+863208b  libra:fix power hal's selinux denials and improve this  [viscropst]
+16b8d8c  libra: Switch to fully binderized power hal  [viscropst]
+
+ * frameworks/base
+277de0b  BluetoothTile: Avoid NPE during boot up phase  [Bruno Martins]
+ac832be  DndTile: Avoid NPE during boot phase  [Bruno Martins]
+34e1bdb  Fix clock disappearing in the QS panel  [ezio84]
+
+ * packages/apps/NitrogenOTA
+61d2529  Revert "Show current changelog"  [xyyx]
+
+ * packages/apps/NitrogenSettings
+d484676  RU: fix bad translation  [xyyx]
+
+ * packages/apps/Settings
+9eaad13  Changelog: Add left padding  [xyyx]
+
+====================
+     2018-02-18    
+====================
+
+ * device/xiaomi/libra
+ca9b83f  Remove something what is not exists  [viscropst]
+cff8f42  Remove some duplicate things  [viscropst]
+a89d750  Fixing the notify light and battery light  [viscropst]
+36ee88b  Try Dash charging  [viscropst]
+e01ab45  Fix some button bugs for nitrogen  [viscropst]
+
+ * frameworks/base
+339a66a  Update Italian translation  [entony80]
+051f00a  Quick statusbar tiles header: expand panel on longpress for details view  [ezio84]
+5475d9b  Hide tiles title: longpress will launch detail view  [maxwen]
+
+ * packages/apps/NitrogenOTA
+1cb4b85  NitrogenOTA: Allow to translate some remote links  [xyyx]
+b59711c  NitrogenOTA: rework automatic updates with JobService  [xyyx]
+40439f0  NitrogenOTA: Use Oreo styles  [xyyx]
+f111ccb  NitrogenOTA: Update launcher icon  [xyyx]
+523d0b0  NitrogenOTA: update notifications  [dadi11]
+
+ * packages/apps/Settings
+1e2ef45  Settings: update changelog activity * improve code  [dadi11]
+
+ * vendor/nitrogen
+49b7198  vendor: update changelog script  [dadi11]
+495e687  OTA: Add Kenzo  [xyyx]
+
+====================
+     2018-02-17    
+====================
+
+ * build/make
+3a8f7b1  Generate properties for NitrogenOTA  [xyyx]
+
+ * device/xiaomi/libra
+9510c85  gps.conf:thinking about the world users  [viscropst]
+
+ * packages/apps/NitrogenOTA
+5e10539  NitrogenOTA: Don't start the intent if there's no browser installed  [Giuseppe Barillari]
+0dc7740  Android.mk: Copy ota_conf from vendor/nitrogen  [xyyx]
+16118ad  NitrogenOTA: Use getprop instead reading build.prop  [xyyx]
+1051f19  Prepare for Nitrogen  [xyyx]
+8ab0b59  Support themes  [xyyx]
+e7cbac5  Disable dexpreopt  [xyyx]
+0bbf788  Show current changelog  [fusionjack]
+
+ * packages/apps/Settings
+cd9dcfa  NitrogenOTA: Fix target_class  [xyyx]
+
+ * vendor/nitrogen
+e366aa9  OTA: Introduce new OTA  [xyyx]
+
+====================
+     2018-02-16    
+====================
+
+ * device/oneplus/oneplus3
+90fe33c  op3: audio: Disable ULL mode  [LuK1337]
+4cbf803  op3: doze: Use OnePlus pickup sensor for pickup detection  [dianlujitao]
+
+ * frameworks/base
+3f1d2e8  Clock: Fix crash in formatted string with date on right  [Pranav Vashi]
+33958b3  Clock date position [1/2]  [yank555-lu]
+fd67456  Circle battery: add a bit of padding when Right clock is enabled  [ezio84]
+
+ * packages/apps/NitrogenSettings
+950309a  Clock date position [2/2]  [yank555-lu]
+
+====================
+     2018-02-15    
+====================
+
+ * device/xiaomi/libra
+ff4d3bf  World needs pick-to-wake and charger images  [viscropst]
+99873da  Fix some selinux denials for logcat shows  [viscropst]
+
+ * frameworks/base
+aa130c4  Battery: skip useless scaling calls when attaching the view  [ezio84]
+fc57a0c  Text/hidden battery: don't use additional resources for no padding values  [Anas Karbila]
+e6d9665  BatteryPercent: Allow disabling percent inside circle * increase percent's size in circle * show percent in quick sb header when circle without inside percent * fix inside percent in portrait and percent when charging. Thanks to ezio84 for suggestions  [xyyx]
+45cc2a4  Battery: use SB observer to update everything and not when attaching views  [ezio84]
+d6ffa3d  Portrait/hidden/txt battery: show percentage in quick sb header and keyguard  [ezio84]
+
+ * packages/apps/NitrogenSettings
+a2ff2b8  BatteryPercent: Allow disabling percent inside circle * fix summary  [xyyx]
+
+ * vendor/nitrogen
+433e7be  themes: build as apps  [xyyx]
+
+====================
+     2018-02-14    
+====================
+
+ * device/xiaomi/libra
+960df78  rmt_storage.te:Fix some selinux denials  [viscropst]
+99f5010  GPS changes for china and other countries  [viscropst]
+05ea0ce  Fix some selinux dehinals  [viscropst]
+
+ * frameworks/base
+c5b01bb  Text battery style: show a tilde when charging  [ezio84]
+671a690  Fix right padding when using hidden/text battery style  [ezio84]
+870a6f7  Circle and dot battery fixes and improvements  [ezio84]
+e7b36c3  BatteryMeterDrawable: add hidden option  [Simon Davie]
+95213b6  BatteryMeterDrawable: add text style  [Danesh M]
+9c1f2da  BatteryMeterDrawable: add dotted circle style  [Jean-Pierre Rasquin]
+bf7d25c  BatteryMeterDrawable: add battery styles [1/2]  [Danesh M]
+f0b124c  Revert "[1/2] base: poor man battery style tweaks"  [xyyx]
+b3be98d  Clock customization: more improvements  [bigrushdog]
+2023c38  Clock code performance improvements  [ezio84]
+1134f28  Status bar left/right clock customizations [1/2]  [Lars Greiss]
+
+ * packages/apps/NitrogenSettings
+7ed13c0  NitrogenSettings: move battery to PreferenceScreen  [xyyx]
+a31c52f  Remove useless strings and translate to RU  [xyyx]
+0063348  Move sysui tuner percentage settings to custom battery settings [2/2] * Hide landscape battery mode for now  [ezio84]
+bb0f220  BatteryMeterDrawable: add battery styles [2/2]  [=Nick Reuter]
+2022de2  Fix Clock date format listpreference  [ezio84]
+cf26b73  Status bar clock and date customizations [2/2]  [Lars Greiss]
+
+ * packages/apps/Settings
+e5aa525  Remove battery percentage switch in stock battery settings  [ezio84]
+798c7dc  Revert "[2/2] Settings: poor man battery style tweaks"  [xyyx]
+
+====================
+     2018-02-13    
+====================
+
+ * device/xiaomi/libra
+b82fdf4  Fix some selinux dehinals and building direction  [viscropst]
+
+ * frameworks/base
+c123900  SystemUI: Always show alarm info in footer * and remove animation after: https://imgur.com/a/QK1Eu  [xyyx]
+685966d  DoubleTapToSleep: Increase bottom area on lockscreen  [xyyx]
+
+ * hardware/qcom/bt
+ca32cde  Fix msm8992 building  [viscropst]
+
+ * packages/apps/Dialer
+e08c98f  Dialer: Update PTBR translation  [Valeriano]
+5d2913d  Update Italian translation  [entony80]
+
+ * packages/apps/NitrogenSettings
+448b3de  RU: fix string  [xyyx]
+
+ * packages/apps/Settings
+3222936  APN: fix editing again https://imgur.com/a/xH5Ih  [xyyx]
+
