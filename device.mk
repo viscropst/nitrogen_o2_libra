@@ -273,8 +273,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.msm8992 \
+    android.hardware.power@1.0-service-qti \
     charger_res_images
 
 PRODUCT_COPY_FILES += \

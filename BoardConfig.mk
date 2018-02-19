@@ -153,7 +153,9 @@ TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_POWERHAL_VARIANT := none
+TARGET_SET_PROFILE:= true
+TARGET_HAS_LEGACY_POWER_STATS:= true
+TARGET_HAS_NO_WIFI_STATS:= true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchscreen/double_tap_enable"
 
 # Properties
