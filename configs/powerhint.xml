@@ -93,7 +93,7 @@
         <!-- GPU - max freq 342 Mhz -->
         <!-- GPUBW freq uncapped -->
         <Config
-            Id="0x00001206" Enable="true" Target="msm8992"
+            Id="0x00001206" Enable="true" Target="libra"
             Resources="0x40800000, 0x0, 0x40800100, 0x0, 0x40804000, 0x4E0, 0x40804100, 0x4E0,
             0x4280C000, 0xB4, 0x42810000, 0x156, 0x42814000, 0x0"/>
     </Powerhint>
