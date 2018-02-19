@@ -172,6 +172,7 @@ TARGET_RIL_VARIANT := caf
 include device/qcom/sepolicy/sepolicy.mk
 include device/xiaomi/libra/sepolicy/legacy/legacy-sepolicy.mk
 include device/xiaomi/libra/sepolicy/oth/common/sepolicy.mk
+include device/xiaomi/libra/sepolicy/oth/qcom/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Vendor init
