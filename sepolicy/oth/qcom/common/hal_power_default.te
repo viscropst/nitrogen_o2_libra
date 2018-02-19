@@ -1,1 +1,2 @@
 allow hal_power_default debugfs_rpm:file { open read getattr };
+allow hal_power_default double_tap_enable_proc:file rw_file_perms;
