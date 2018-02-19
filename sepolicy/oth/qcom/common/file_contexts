@@ -1,5 +1,3 @@
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti      u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti      u:object_r:hal_power_default_exec:s0
-#Double tap to wake
-/proc/touchscreen/double_tap_enable u:object_r:double_tap_enable_proc:s0
