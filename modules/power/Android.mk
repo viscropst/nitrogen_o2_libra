@@ -74,14 +74,14 @@ ifeq ($(TARGET_SET_PROFILE),true)
 endif
 
 ifeq ($(TARGET_HAS_NO_WIFI_STATS),true)
-LOCAL_MODULE := android.hardware.power@1.0-service-qti
-LOCAL_INIT_RC := android.hardware.power@1.0-service-qti.rc
+LOCAL_MODULE := android.hardware.power@1.0-service-qti.libra
+LOCAL_INIT_RC := android.hardware.power@1.0-service-qti.libra.rc
 LOCAL_SHARED_LIBRARIES += android.hardware.power@1.0
 LOCAL_CFLAGS += -DV1_0_HAL
-else
-LOCAL_MODULE := android.hardware.power@1.1-service-qti
-LOCAL_INIT_RC := android.hardware.power@1.1-service-qti.rc
-LOCAL_SHARED_LIBRARIES += android.hardware.power@1.1
+#else
+#LOCAL_MODULE := android.hardware.power@1.1-service-qti
+#LOCAL_INIT_RC := android.hardware.power@1.1-service-qti.rc
+#LOCAL_SHARED_LIBRARIES += android.hardware.power@1.1
 endif
 LOCAL_SHARED_LIBRARIES += vendor.lineage.power@1.0
 LOCAL_MODULE_TAGS := optional
