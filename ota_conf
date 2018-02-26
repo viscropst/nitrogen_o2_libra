@@ -1,0 +1,8 @@
+#Common OTA url for all devices
+ota_url=https://raw.githubusercontent.com/viscropst/nitrogen_o2_libra/ota/ota.xml
+release_type=Stable
+device_name=ro.nitrogen.device
+version_source=ro.nitrogen.ota.version
+version_delimiter=-
+version_position=4
+version_format=yyyyMMdd
