@@ -167,6 +167,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
 TARGET_RIL_VARIANT := caf
+BOARD_PROVIDES_LIBRIL := true 
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
