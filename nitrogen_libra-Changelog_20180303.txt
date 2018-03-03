@@ -1,0 +1,66 @@
+====================
+     2018-03-03    
+====================
+
+ * device/xiaomi/libra
+b4bcc0e  Update the fingerprint to 8.2.1  [viscropst]
+7ca7df4  Upgrade overlay to miui 8.2.1 and fix pick to wake  [viscropst]
+59ef4bb  Switch to audio_effects.xml  [viscropst]
+d661443  change the type  [viscropst]
+be9bf24  Add ota for libra  [viscropst]
+
+ * frameworks/base
+29e8b44  Revert "Check VintfObject compatibility on boot"  [Christian Oder]
+
+ * vendor/nitrogen
+a2dd12f  Added OTA for mako and shamu  [Nitin1438]
+
+ * vendor/xiaomi
+c2c5e1b  update  [Demon000]
+
+====================
+     2018-03-02    
+====================
+
+ * vendor/xiaomi
+d9e8f33  xiaomi: import sagit blobs from MIUI 8.2.1  [Demon000]
+
+====================
+     2018-03-01    
+====================
+
+====================
+     2018-02-28    
+====================
+
+====================
+     2018-02-27    
+====================
+
+====================
+     2018-02-26    
+====================
+
+ * device/xiaomi/libra
+10af96b  Add an fixed ril for libra when the nitorgen not merged  [viscropst]
+
+====================
+     2018-02-25    
+====================
+
+ * frameworks/base
+deacb58  Dark theme permission icon  [ezio84]
+9c72338  Themes: Allow Permission Icons to be fully themed  [Nicholas Chum]
+1ff9838  Themes: fix autofill saved entries picker dialog  [ezio84]
+33105ac  core: Poor Man themes: fix autofill save dialog  [Marko Man]
+f73baa1  BatteryMeterDrawable: add square style (1/2)  [maxwen]
+
+ * packages/apps/NitrogenSettings
+70cfe10  BatteryMeterDrawable: add square style (2/2)  [maxwen]
+
+ * packages/apps/Settings
+f8bbbc1  Fix square battery view in Battery  [xyyx]
+
+ * vendor/nitrogen
+772ff36  OTA: Add Santoni  [Nikesh001]
+
