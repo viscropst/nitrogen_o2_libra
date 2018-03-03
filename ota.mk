@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(WANTS_CUST_OTA),true)
+ifeq ($(WANTS_TRY_OTA),true)
 
 PRODUCT_PACKAGES += \
     NitrogenOTA
