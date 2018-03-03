@@ -32,6 +32,8 @@ $(call inherit-product, vendor/xiaomi/libra/libra-vendor.mk)
 # Call the HWUI overrides
 $(call inherit-product, vendor/nitrogen/config/phone-xxhdpi-2048-hwui-memory.mk)
 
+$(call inherit-product, device/xiaomi/libra/ota.mk)
+
 
 
 
