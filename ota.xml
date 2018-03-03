@@ -2,12 +2,12 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
         <libra>
-            <Filename>Nitrogen-OS-O-libra-20180226.zip</Filename>
+            <Filename>Nitrogen-OS-O-libra-20180303.zip</Filename>
             <RomUrl id="rom" title="" description="">
                 https://mega.nz/#F!5E1zCAAC!zqxkw4E6bBiW1u1fDjItJA
             </RomUrl>
             <ChangelogUrl id="changelog" title="" description="">
-                https://raw.githubusercontent.com/viscropst/nitrogen_o2_libra/changelog/nitrogen_libra-Changelog-20180226.txt
+                https://raw.githubusercontent.com/viscropst/nitrogen_o2_libra/changelog/nitrogen_libra-Changelog-20180303.txt
             </ChangelogUrl>
             <PaypalUrl id="donation" title="" description="">https://paypal.me/linlight</PaypalUrl>
         </libra> 
