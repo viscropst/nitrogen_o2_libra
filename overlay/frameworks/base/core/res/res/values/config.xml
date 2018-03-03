@@ -79,23 +79,35 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
         <item>10</item>
-        <item>20</item>
+        <item>12</item>
+        <item>15</item>
+        <item>18</item>
+        <item>22</item>
+        <item>30</item>
+        <item>40</item>
         <item>50</item>
-        <item>100</item>
-        <item>200</item>
+        <item>70</item>
+        <item>150</item>
         <item>300</item>
         <item>400</item>
-        <item>500</item>
+        <item>520</item>
         <item>600</item>
         <item>700</item>
-        <item>800</item>
-        <item>1000</item>
+        <item>900</item>
+        <item>1100</item>
         <item>1200</item>
-        <item>1600</item>
-        <item>2200</item>
-        <item>3000</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1800</item>
+        <item>2400</item>
+        <item>2800</item>
+        <item>3500</item>
         <item>4000</item>
     </integer-array>
 
@@ -105,34 +117,46 @@
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>2</item>
         <item>2</item>
-        <item>4</item>
+        <item>2</item>
         <item>8</item>
-        <item>12</item>
-        <item>20</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>13</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
         <item>30</item>
-        <item>46</item>
-        <item>49</item>
-        <item>54</item>
-        <item>61</item>
+        <item>30</item>
+        <item>40</item>
+        <item>48</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
         <item>65</item>
         <item>70</item>
-        <item>76</item>
-        <item>82</item>
-        <item>87</item>
-        <item>98</item>
-        <item>108</item>
-        <item>131</item>
-        <item>161</item>
-        <item>230</item>
+        <item>75</item>
+        <item>80</item>
+        <item>88</item>
+        <item>93</item>
+        <item>96</item>
+        <item>99</item>
+        <item>106</item>
+        <item>120</item>
+        <item>160</item>
+        <item>200</item>
+        <item>240</item>
         <item>255</item>
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">5</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">78</integer>
+    <integer name="config_screenBrightnessSettingDefault">128</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -143,8 +167,8 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
 
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
     <integer name="config_shutdownBatteryTemperature">600</integer>
@@ -166,7 +190,7 @@
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">1</integer>
+    <integer name="config_screenBrightnessDoze">17</integer>
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
@@ -192,7 +216,7 @@
 
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,6291456,8291456,524288,6291456,8291456</string>
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,2097152,262144,524288,1048576</string>
 
     <!-- Operating volatage for wifi radio. 0 by default-->
     <integer translatable="false" name="config_wifi_operating_voltage_mv">3700</integer>
@@ -210,14 +234,14 @@
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
         <item>"wlan0"</item>
-        <item>"softap.*"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
          should be empty. -->
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bt-pan"</item>
+        <item>bnep\\d</item>
+        <item>bt-pan</item>
     </string-array>
 
     <!-- Array of allowable ConnectivityManager network types for tethering -->
@@ -378,5 +402,14 @@
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">true</bool>
+    
+    <!-- Proximity check on screen on -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+
+    <!-- Proximity check timeout -->
+    <integer name="config_proximityCheckTimeout">100</integer>
+
+    <!-- Proximity check on screen on default -->
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
 </resources>

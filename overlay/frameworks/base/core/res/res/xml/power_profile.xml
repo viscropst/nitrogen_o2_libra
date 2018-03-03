@@ -32,7 +32,7 @@
     <item name="radio.active">300</item>
     <item name="gps.on">27</item>
     <!-- This is the battery capacity in mAh -->
-    <item name="battery.capacity">3000</item>
+    <item name="battery.capacity">3080</item>
     <!-- The current consumed by the radio when it is scanning for a signal -->
     <item name="radio.scanning">3</item>
     <!-- Current consumed by the radio at different signal strengths, when paging -->
