@@ -1,0 +1,59 @@
+====================
+     2018-03-10    
+====================
+
+ * device/xiaomi/libra
+9a47c11  Power:Tweak somethin if it can't set profile  [viscropst]
+12d6681  Revert the binder sensor service  [viscropst]
+
+====================
+     2018-03-09    
+====================
+
+====================
+     2018-03-08    
+====================
+
+====================
+     2018-03-07    
+====================
+
+ * vendor/xiaomi
+50aa548  msm8998-common: use MI Camera HAL from MIUI 8.1.18  [Demon Singur]
+47129a7  xiaomi: import msm8998 and sagit blobs from MIUI 8.2.1  [Demon000]
+
+====================
+     2018-03-06    
+====================
+
+ * build/make
+ab51c97  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+ * frameworks/av
+5739ce6  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+ * frameworks/base
+c5eee6d  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+ * hardware/interfaces
+8680439  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+ * packages/apps/Settings
+514656a  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+ * system/bt
+d87d31b  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
+
+====================
+     2018-03-05    
+====================
+
+====================
+     2018-03-04    
+====================
+
+ * device/xiaomi/libra
+a6eee3c  power:set big core number in power hal  [viscropst]
+43845a1  libra:try with du's apn-conf.xml  [viscropst]
+406d76c  update the fingerprint and modify the ovelay  [viscropst]
+
