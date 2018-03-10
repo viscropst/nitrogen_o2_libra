@@ -58,8 +58,8 @@
 #define BALANCED_PROP           "1"
 #define HIGH_PERFORMANCE_PROP   "2"
 #define BIAS_POWER_PROP         "3"
-#define BIAS_PERFORMANCE_PROP   "4"
-#define POWER_NO_PROFILE         2E
+#define BIAS_PERFORMANCE_PROP   "4" 
+#define POWER_NO_PROFILE 0x2E
 
 #define BIG_MIN_CPU_PATH "/sys/devices/system/cpu/cpu4/core_ctl/min_cpus"
 #define BIG_MAX_CPU_PATH "/sys/devices/system/cpu/cpu4/core_ctl/max_cpus"
@@ -110,16 +110,16 @@ static void set_power_profile(int profile)
 }
 
 static int process_sustained_hint(void *data){
-    if(*(*int32)data > 0)
-        set_power_profile(PROFILE_POWER_SAVE);
+    if(*(int32_t *)data > 0)
+        set_power_profile(PROFILE_BIAS_PERFORMANCE);
     else
         set_power_profile(POWER_NO_PROFILE);
     return HINT_HANDLED;
 }
 
 static int process_low_power_hint(void *data){
-    if(*(*int32)data > 0)
-        set_power_profile(PROFILE_BIAS_PERFORMANCE);
+    if(*(int32_t *)data > 0)
+        set_power_profile(PROFILE_POWER_SAVE);
     else
         set_power_profile(POWER_NO_PROFILE);
     return HINT_HANDLED;
