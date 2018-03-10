@@ -3,6 +3,7 @@
 ====================
 
  * device/xiaomi/libra
+380fc47  Fix the power compiling error and update fingerprint  [viscropst]
 9a47c11  Power:Tweak somethin if it can't set profile  [viscropst]
 12d6681  Revert the binder sensor service  [viscropst]
 
@@ -54,6 +55,4 @@ d87d31b  Merge tag 'android-8.1.0_r18' into o2  [xyyx]
 
  * device/xiaomi/libra
 a6eee3c  power:set big core number in power hal  [viscropst]
-43845a1  libra:try with du's apn-conf.xml  [viscropst]
-406d76c  update the fingerprint and modify the ovelay  [viscropst]
 
