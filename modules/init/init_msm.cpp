@@ -109,15 +109,15 @@ void vendor_load_properties()
     case LIBRA_BOARD_ID:
         property_override("ro.product.model", "Mi-4c");
         property_override("ro.product.device", "libra");
-        property_override("ro.build.description", "libra-user 7.0 NXKCNEK 9.2.2.0 release-keys");
-        property_override("ro.build.fingerprint", "Xiaomi/libra/libra:7.0/NXKCNEK/8.3.1:user/release-keys");
+        property_override("ro.build.description", "libra-user 7.0 NRD90M V9.5.1.0.NXKCNFA release-keys");
+        property_override("ro.build.fingerprint", "Xiaomi/libra/libra:7.0/NRD90M/V9.5.1.0.NXKCNFA:user/release-keys");
         property_override("ro.build.product", "libra");
         break;
     case AQUA_BOARD_ID:
         property_override("ro.product.model", "Mi-4s");
         property_override("ro.product.device", "aqua");
-        property_override("ro.build.description", "aqua-user 7.0 NAJCNEK 9.2.2.0 release-keys");
-        property_override("ro.build.fingerprint", "Xiaomi/aqua/aqua:7.0/NAJCNEK/9.2.2.0:user/release-keys");
+        property_override("ro.build.description", "libra-user 7.0 NRD90M V9.5.1.0.NXKCNFA release-keys");
+        property_override("ro.build.fingerprint", "Xiaomi/aqua/aqua:7.0/NRD90M/V9.5.1.0.NXKCNFA:user/release-keys");
         property_override("ro.build.product", "aqua");
         property_set("ro.boot.fingerprint", "fpc");
         break;
