@@ -2,7 +2,7 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
         <libra>
-            <Filename>Nitrogen-OS-O-libra-20180310.zip</Filename>
+            <Filename>Nitrogen-OS-O-libra-20180324.zip</Filename>
             <RomUrl id="rom" title="" description="">https://mega.nz/#!oJF2HTBC!8twwLzAUNUjbl3f50kNsG15aGX4XXMnYzSkBbOivQVA
             </RomUrl>
             <ChangelogUrl id="changelog" title="" description="">https://raw.githubusercontent.com/viscropst/nitrogen_o2_libra/changelog/nitrogen_libra-Changelog-20180303.txt
