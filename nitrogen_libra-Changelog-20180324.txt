@@ -1,0 +1,85 @@
+====================
+     2018-03-25    
+====================
+
+ * frameworks/base
+18998f1  Hidden battery keyguard percentage: fix padding, show charging indicator  [ezio84]
+
+====================
+     2018-03-24    
+====================
+
+====================
+     2018-03-23    
+====================
+
+ * frameworks/base
+d3896eb  BatteryMeter: some fixes * returned plus symbol to circle in PowerSaving mode * added percentage near icon in PowerSaving mode * made plus symbol smaller by ezio84  [xyyx]
+39be1e4  Use  Auto brightness for Ambient Display  [ezio84]
+
+ * packages/apps/Settings
+d043b6b  Fix memory leak of DataSaverPreference  [Jin Dong]
+b9b0132  Add Turkish translation  [razor84]
+
+====================
+     2018-03-22    
+====================
+
+ * frameworks/base
+c99a0cb  SystemUI: locked tasks should have a valid view  [thecrazyskull]
+
+ * packages/apps/NitrogenOTA
+86d33a1  Add Turkish translation  [razor84]
+
+ * packages/apps/NitrogenSettings
+925042b  Change Transparency to Opacity  [Josh Chasky]
+5869f0d  Update Turkish  [razor84]
+
+====================
+     2018-03-21    
+====================
+
+ * frameworks/base
+13227fd  Quick settings panel : Set transparency [1/2]  [Nico60]
+68611e0  [2/2] themes: fix notification overlay config  [maxwen]
+1f91992  1/2] base: fix notification overlay config  [maxwen]
+b301d56  base: Poor Man Themes: force "NightMode" for Notifications  [Marko Man]
+0925f17  SystemUI: Fix NPE on SlashDrawable  [jhenrique09]
+1056ccd  SystemUI: Reload more assets on overlay change  [Ivan Iskandar]
+
+ * packages/apps/NitrogenSettings
+ed825ce  Update Italian translation  [entony80]
+4cf84d7  Update Turkish  [Mevlüt TOPÇU]
+8e2e4ab  Quick settings panel : Set transparency [2/2]  [Nico60]
+
+====================
+     2018-03-20    
+====================
+
+ * frameworks/base
+af2f5de  Themes: fix my derp in colors  [xyyx]
+2625eef  Black/Dark Theme: Support theming notificatons  [Chris]
+e37e35f  Overlays: Add toast dialog to dark/black mode  [westcripp]
+403ccd7  Add support for theming notifications  [Marko Man]
+3e612ed  Themes: base: expose toast colors for themes  [Adarsh-MR]
+
+ * packages/apps/Settings
+e14dc45  Adjust delay to prevent glitches when reloading notifications  [jhenrique09]
+
+====================
+     2018-03-19    
+====================
+
+ * device/xiaomi/libra
+d91bfab  init_msm:upgrade the fingerprint from stable version  [viscropst]
+af5a885  libra:change the non profile and remove the audio_effects.conf  [viscropst]
+
+ * packages/apps/NitrogenSettings
+8471260  Color picker: show hex input box on top  [ezio84]
+
+ * system/sepolicy
+4b25002  sepolicy: suppress denial logspam  [Jeff Vander Stoep]
+
+ * vendor/nitrogen
+a9e25d2  Changes for china mobile carrier settings  [viscropst]
+
